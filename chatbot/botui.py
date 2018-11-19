@@ -27,10 +27,12 @@ def bot_ui():
     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
     knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
+    rules_dir = os.path.join(PROJECT_ROOT, 'Data', 'Rules')
 
     with tf.Session() as sess:
         predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
-                                 result_dir=res_dir, result_file='basic')
+                                 result_dir=res_dir, aiml_dir=rules_dir,
+                                 result_file='basic')
         # This command UI has a single chat session only
         session_id = predictor.session_data.add_session()
 
