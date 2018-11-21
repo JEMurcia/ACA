@@ -76,7 +76,7 @@ function show_picture_randomly(bc, picture_name) {
 		if (rand>0) { // Do nothing when it is 0
 			var img_src="/images/"+lower_name+"_"+rand+".jpg";
 			var img_line="<div class='answer'>"+
-				         "<div class='user'><figure class='avatar'><img src='/images/papaya.jpg'/></figure></div>"+
+				         "<div class='user'><figure class='avatar'><img src='/images/papaya.png'/></figure></div>"+
 				         "<div class='image'><img src='"+img_src+"' alt='"+picture_name.replace("_", " ")+"'></div>"+
 					     "</div>";
 			bc.append(img_line);

@@ -3,7 +3,7 @@
         <pattern>LOAD AIML B</pattern>
         <template>
             <!-- Load standard AIML set -->
-            <learn>Rules/aca/unknown.aiml</learn>
+            <learn>Data/Rules/aca/unknown.aiml</learn>
         </template>
     </category>
 </aiml>

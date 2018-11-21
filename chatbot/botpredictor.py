@@ -27,7 +27,7 @@ from chatbot.functiondata import call_function
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 BRAIN_FILE = "brain.dump"
-AIMLS_FILE = "tot-startup.aiml"
+AIMLS_FILE = "ter-startup.aiml"
 
 class BotPredictor(object):
     def __init__(self, session, corpus_dir, knbase_dir, result_dir, aiml_dir, result_file):
@@ -58,6 +58,7 @@ class BotPredictor(object):
         # Create Retrival model
         self.kmodel = aiml.Kernel()
         brain_file_name = os.path.join(aiml_dir, BRAIN_FILE)
+        print(aiml_dir)
         
         # Restore model rules
         if os.path.exists(brain_file_name):
@@ -68,7 +69,7 @@ class BotPredictor(object):
             aimls_file_name = os.path.join(aiml_dir, AIMLS_FILE)
             self.kmodel.bootstrap(learnFiles=os.path.abspath(aimls_file_name), commands="load aiml b")
             print("# Saving brain file: " + BRAIN_FILE)
-            self.kmodel.saveBrain(BRAIN_FILE)
+            self.kmodel.saveBrain(brain_file_name)
         
         # Create Generative model
         print("# Creating inference model ...")
